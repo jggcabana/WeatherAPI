@@ -13,7 +13,7 @@
 
 ### Local Development Setup
 - In order to run the API, you will need API keys for our 3rd APIs. Create an account and subscribe to the free tier to obtain API keys for the following:
-	- 	 [Rapid Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)
+	- [Rapid Weather API](https://rapidapi.com/weatherapi/api/weatherapi-com/)
 	- [City API - API Ninjas](https://api-ninjas.com/api/city)
 - Due to security reasons, storing API keys in the solution is discouraged, so we need to manage they keys as secrets.
 - In the root folder of the application, configure user secrets using the following command(s):
@@ -32,3 +32,4 @@ dotnet user-secrets set "ApiNinjaCityApiKey" "{your-api-ninja-api-key}" --projec
 	- Structured logging (preferrably via serilog)
 	- Better caching implementation
 	- Unit tests (although most of the code has minimal business logic, since it is simply made up of calls to 3rd party APIs).
+- For the most part of my development efforts on this project, the Cities API was returning a `502: Bad Gateway` error. In order to test the end-to-end  functionality of the app, I mocked some data from online sources (i.e., API calls to Cities will return mock data in the event of a 502). This is strictly for development and testing purposes only.
